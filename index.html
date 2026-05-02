@@ -2740,6 +2740,14 @@
           }
         });
         window.addEventListener("resize", () => resizeCanvas(document.getElementById("particleCanvas")));
+
+        setInterval(() => {
+          if (rolloverIfNeeded()) {
+            renderChecklist();
+            updateStatus();
+            updateScheduleMode(state.scheduleMode);
+          }
+        }, 60000);
       }
 
       init();
